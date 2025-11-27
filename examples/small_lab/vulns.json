@@ -1,0 +1,20 @@
+[
+  {
+    "asset_id": 2,
+    "origin": "scanner",
+    "cve_id": "CVE-2023-0001",
+    "title": "Web RCE",
+    "cvss_score": 9.0,
+    "exploit_available": true,
+    "tags": ["rce"]
+  },
+  {
+    "asset_id": 3,
+    "origin": "scanner",
+    "cve_id": "CVE-2022-1111",
+    "title": "AppServer LPE",
+    "cvss_score": 7.0,
+    "exploit_available": false,
+    "tags": ["privesc"]
+  }
+]

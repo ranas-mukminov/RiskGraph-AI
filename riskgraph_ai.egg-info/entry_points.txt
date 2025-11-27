@@ -1,0 +1,2 @@
+[console_scripts]
+riskgraph = riskgraph.cli.main:app

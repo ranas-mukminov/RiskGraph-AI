@@ -1,0 +1,9 @@
+[
+  {
+    "id": 10,
+    "type": "edr",
+    "name": "EDR-Agent",
+    "protected_assets": [3, 4],
+    "attributes": {"vendor": "ACME"}
+  }
+]

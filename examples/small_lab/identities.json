@@ -1,0 +1,4 @@
+[
+  {"identity_id": 5, "target_asset_id": 3, "privilege_type": "has_privilege", "attributes": {"level": "sudo"}, "cost": 1.5},
+  {"identity_id": 5, "target_asset_id": 4, "privilege_type": "has_admin", "cost": 1.0}
+]

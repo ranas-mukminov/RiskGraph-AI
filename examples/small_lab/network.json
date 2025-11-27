@@ -1,0 +1,5 @@
+[
+  {"source": 1, "target": 2, "relation_type": "can_reach", "attributes": {"port": 443, "protocol": "https"}, "cost": 1.0},
+  {"source": 2, "target": 3, "relation_type": "can_reach", "attributes": {"port": 8080}, "cost": 2.0},
+  {"source": 3, "target": 4, "relation_type": "can_reach", "attributes": {"port": 5432}, "cost": 2.5}
+]

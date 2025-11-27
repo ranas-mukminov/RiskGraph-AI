@@ -1,0 +1,81 @@
+Metadata-Version: 2.4
+Name: riskgraph-ai
+Version: 0.1.0
+Summary: RiskGraph AI – attack graph and risk prioritization engine for modern infrastructures.
+Author: RiskGraph AI Maintainers
+License: MIT License
+        
+        Copyright (c) 2025 Run_as_daemon
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi>=0.110
+Requires-Dist: uvicorn[standard]>=0.23
+Requires-Dist: pydantic<3,>=1.10
+Requires-Dist: sqlmodel>=0.0.14
+Requires-Dist: sqlalchemy>=2.0
+Requires-Dist: networkx>=3.2
+Requires-Dist: typer>=0.9
+Requires-Dist: python-multipart>=0.0.6
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: httpx>=0.24
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23; extra == "dev"
+Requires-Dist: anyio>=3.7; extra == "dev"
+Dynamic: license-file
+
+RiskGraph AI – attack graph and risk prioritization engine for modern infrastructures.
+
+Features
+- Attack graph modeling with assets, identities, controls, vulnerabilities, and relationships.
+- Ingestion from standardized JSON bundles (assets, network, identities, vulns, controls).
+- Risk scoring and path analysis (shortest/K-shortest) with configurable weights.
+- FastAPI backend and Typer CLI; optional AI layer with deterministic dummy explanations.
+- Open-core friendly design with swappable graph backend and database.
+
+Quickstart
+1) Clone and install:
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+2) Ingest the example lab and build a graph:
+```
+riskgraph init-workspace --name "Lab"
+riskgraph ingest-json --workspace-id 1 --path examples/small_lab
+riskgraph build-graph --workspace-id 1
+```
+3) List top paths:
+```
+riskgraph list-paths --snapshot-id 1 --top 3
+```
+4) Run the API:
+```
+uvicorn riskgraph.api.main:app --reload
+```
+
+Testing
+```
+pytest
+```

@@ -1,0 +1,7 @@
+[
+  {"id": 1, "type": "external", "subtype": "internet", "name": "Internet", "criticality": "low", "entry": true},
+  {"id": 2, "type": "host", "subtype": "web", "name": "WebServer", "criticality": "medium"},
+  {"id": 3, "type": "host", "subtype": "app", "name": "AppServer", "criticality": "high"},
+  {"id": 4, "type": "db", "subtype": "postgres", "name": "ProdDB", "criticality": "crown_jewel"},
+  {"id": 5, "type": "identity", "subtype": "user", "name": "OpsUser", "criticality": "medium"}
+]
