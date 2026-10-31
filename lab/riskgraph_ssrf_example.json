@@ -1,0 +1,17 @@
+{
+  "_comment": "Lab-only example in the docs/ingestion_format.md bundle shape. Asset IDs are fictional lab IDs. No real system, no CVE claimed: the finding is classed as CWE-918.",
+  "assets": [
+    {"id": 1, "type": "host", "subtype": "web", "name": "LabWebApp", "criticality": "medium", "labels": ["lab"], "attributes": {"os": "linux"}, "entry": true},
+    {"id": 2, "type": "host", "subtype": "internal-service", "name": "LabInternalService", "criticality": "high", "labels": ["lab"], "attributes": {"os": "linux"}, "entry": false}
+  ],
+  "network": [
+    {"source": 1, "target": 2, "relation_type": "can_reach", "cost": 2.0, "attributes": {"port": 80, "protocol": "http"}}
+  ],
+  "identities": [],
+  "vulns": [
+    {"asset_id": 1, "origin": "lab-detector", "cve_id": null, "title": "Server-Side Request Forgery (CWE-918)", "cvss_score": null, "exploit_available": false, "tags": ["ssrf", "cwe-918", "lab-only"]}
+  ],
+  "controls": [
+    {"id": 50, "type": "allowlist", "name": "OutboundHostAllowlist", "protected_assets": [1], "attributes": {"vendor": "lab"}}
+  ]
+}
