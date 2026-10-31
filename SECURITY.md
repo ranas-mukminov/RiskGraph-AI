@@ -10,8 +10,9 @@ out of scope and must not be done using anything in this repository.
 
 ## What the lab does and does not do
 
-- It detects a vulnerability *pattern* (SSRF, CWE-918) in local source
-  code, statically, without fetching any URL or running target code.
+- It detects vulnerability *patterns* in local source code, statically,
+  without fetching any URL or running target code: SSRF (CWE-918) and
+  IDOR / broken access control (CWE-639 / CWE-862).
 - It documents mitigation and a responsible-disclosure template.
 - It does **not** include exploits for real-world production systems,
   ready-made phishing templates, or tooling for unauthorised access.
