@@ -36,4 +36,4 @@ pytest
 
 ## Vulnerability lab (lab-only, defensive)
 
-See `lab/README.md`: a lab-only SSRF (CWE-918) detection section — a static detector that never fetches a URL, a mitigation checklist, a RiskGraph ingestion example, and a responsible-disclosure template. Scope is systems you own or a local lab container you control only; see `SECURITY.md`. No CVE, bounty, or Red-tier evidence is claimed.
+See `lab/README.md`: lab-only SSRF (CWE-918) and IDOR (CWE-639 / CWE-862) detection sections — static detectors that never fetch a URL, mitigation checklists, RiskGraph ingestion examples, and a responsible-disclosure template. Scope is systems you own or a local lab container you control only; see `SECURITY.md`. No CVE, bounty, or Red-tier evidence is claimed.
